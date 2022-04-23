@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>
+    Welcome to The-Daily-News 
+</h1>
+{% for item in news%}
+<ul>
+    <li>
+       <a href='{{item.get_absolute_url}}'>{{ item.title }}</a> 
+    </li>
+</ul>
+{% endfor %}
+{% comment %} <a href="{% url 'daily_news:create' %}">Create News</a> {% endcomment %}
+{% endblock %}

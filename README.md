@@ -31,7 +31,7 @@ Currently, any visitor can:
 ```
 
 ### Tests
-Trun tests:
+To run tests:
 ```
   python manage.py tests
 ```

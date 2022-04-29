@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import Http404
 from .models import News
 from.forms import NewsForm
+from django.contrib.auth.decorators import login_required
 
 
 def news_detail_view(request, id=None):
@@ -16,6 +17,7 @@ def news_detail_view(request, id=None):
     }
     return render(request, 'daily_news/details.html', context)
 
+@login_required
 def news_create_view(request):
     form = NewsForm(request.POST or None)
     context = {
@@ -25,4 +27,5 @@ def news_create_view(request):
         context['form'] = NewsForm()
         news_obj = form.save()
         return redirect(news_obj.get_absolute_url())
+   
     return render(request, 'daily_news/create.html', context)

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<p> {{user.username}} already logged in!</p>
+<a href="{% url 'accounts:logout'%}">Logout {{user.username}}? </a>
+
+{% else %}
+<form action="" method="post">
+    {% csrf_token %}
+    {% if error %}
+    <p> {{error}} </p>
+    {% endif %}
+    <div>
+        <input type="username" name="username" placeholder="Username"> <br><br><br>
+        <input type="password" name="password" placeholder="Password"> <br><br>
+        <button type="submit">Login</button>
+    </div>
+</form>
+{% endif %}
+
+{% endblock content %}

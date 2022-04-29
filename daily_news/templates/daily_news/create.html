@@ -1,6 +1,9 @@
 {% extends 'base.html' %} 
+
 {% block content %}
 
+{% if user.is_authenticated%}
+<h2>Create your news content here</h2>
 <div style="margin-top: 30px">
   <form action="." method="POST">
     {% csrf_token %}
@@ -10,5 +13,7 @@
     </div>
   </form>
 </div>
+
+{% endif %}
 
 {% endblock %}

@@ -1,14 +1,35 @@
 {% extends 'base.html'%}
+
+{% block title %}Home{% endblock %}
+
 {% block content %}
-<h1>
-    Welcome to The-Daily-News 
-</h1>
+{% if user.is_authenticated %}
+<main>
+    <h1>
+        Welcome {{ user}}, to TDN!
+    </h1> 
+</main>
+
+{% else %} 
+<main>
+    <h1>
+        Welcome to The-Daily-News 
+    </h1>
+
+</main>
+ {% endif %}
+
+<div>
+    <h3>Recent Uploads</h3>
+</div>
+
 {% for item in news%}
-<ul>
-    <li>
-       <a href='{{item.get_absolute_url}}'>{{ item.title }}</a> 
-    </li>
-</ul>
+<div>
+    <ul>
+        <li>
+        <a href='{{item.get_absolute_url}}'>{{ item.title }}</a> 
+        </li>
+    </ul>
+</div>
 {% endfor %}
-{% comment %} <a href="{% url 'daily_news:create' %}">Create News</a> {% endcomment %}
 {% endblock %}

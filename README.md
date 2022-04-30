@@ -7,11 +7,14 @@ Registered users can upvote or downvote news items as well as comment on them. S
 
 
 ## App Features
-Currently, any visitor can:
-- View all items uploaded to the page
-- View details of a particular/ preferred news item
-- Create an account
-- Add news items
+Currently, 
+ 1. visitors can:
+    - View all items uploaded to the page
+    - View details of a particular/ preferred news item
+    - Create an account
+  
+ 2. registered users can:
+    - Create news items
 
 ### To run program:
 1. Clone the repository:
@@ -26,7 +29,9 @@ Currently, any visitor can:
  ```
   pip install -r requirements.txt
 ```
-4. Run server as localhost on port 8000(default) or a preferred port
+4. Create a .env file with your SECRET_KEY
+
+5. Run server as localhost on port 8000(default) or a preferred port
 ```
   python manage.py runserver <preferred port:optional>
 ```

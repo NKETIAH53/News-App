@@ -9,8 +9,9 @@ Registered users can upvote or downvote news items as well as comment on them. S
 ## App Features
 Currently, any visitor can:
 - View all items uploaded to the page
-- Create new items to be included as part of the home page view
 - View details of a particular/ preferred news item
+- Create an account
+- Add news items
 
 ### To run program:
 1. Clone the repository:

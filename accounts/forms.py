@@ -1,7 +1,8 @@
-# from django.contrib.auth.forms import UserChangeForm
-# from django import forms
-# from django.forms.forms import EmailField
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
 
 
-# class RegistrationForm(forms.ModelForm):
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(label='email')
+    birthdate = forms.DateField()
     
